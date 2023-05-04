@@ -53,6 +53,11 @@ for (let y = 0; y < 20; y++) {
     }
 }
 
+addEventListener('touchmove', event => {
+    const { clientX, clientY } = event.touches[0];
+    document.elementFromPoint(clientX, clientY).click();
+});
+
 const divs = Array.from(document.getElementsByTagName('div'));
 
 requestAnimationFrame(step);
